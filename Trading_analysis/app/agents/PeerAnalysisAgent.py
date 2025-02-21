@@ -57,7 +57,7 @@ class PeerAnalysisAgent(FinancialAgent):
     def _get_fmp_peers(self, symbol):
         """Retrieve peers from FMP API with error handling"""
         try:
-            api_key="psLDSVqIltje4tobmRza8RKGOmZRH636"
+            api_key=self.settings.financial_modeling_key
             url = f"https://financialmodelingprep.com/stable/stock-peers?symbol={symbol}&apikey={api_key}"
 
             response = requests.get(url,timeout=10)
