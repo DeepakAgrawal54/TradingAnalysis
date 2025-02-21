@@ -50,3 +50,9 @@ async def analyze_stock(request: TradingRequest):
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
+
+# When running locally, use the port defined by the environment, else default to 8000
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 10000))  # Get the port from the environment variable
+    uvicorn.run(app, host="0.0.0.0", port=port)
