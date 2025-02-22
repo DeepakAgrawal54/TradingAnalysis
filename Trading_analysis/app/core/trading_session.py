@@ -12,6 +12,7 @@ from core.message_bus import MessageBus
 from core.cache_manager import CacheManager
 from config import get_settings
 from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 
 
 class TradingSession:
@@ -23,10 +24,10 @@ class TradingSession:
         self.cache = CacheManager()
         
         # Initialize LLM
-        self.llm = ChatOpenAI(
+        self.llm = ChatGroq(
             temperature=0.5,
             model="gpt-4-1106-preview",
-            openai_api_key=self.settings.openai_api_key
+            openai_api_key=self.settings.grok_api_key
         )
         
         # Initialize agents
