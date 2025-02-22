@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     reddit_client_id: str
     reddit_client_secret: str
     cache_ttl: int = 3600
+    groq_api_key: str
     
     class Config:
         env_file = ".env"
