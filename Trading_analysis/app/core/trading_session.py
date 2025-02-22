@@ -26,7 +26,7 @@ class TradingSession:
         # Initialize LLM
         self.llm = ChatGroq(
             temperature=0.5,
-            model="llama-3.1-8b-instant",
+            model="llama-3.3-70b-versatile",
             groq_api_key=self.settings.groq_api_key
         )
         
