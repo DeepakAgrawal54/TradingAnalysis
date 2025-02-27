@@ -28,7 +28,7 @@ class InstitutionalDataAgent(FinancialAgent):
         symbol = message['symbol']
         print(f"\n🏦 {self.name} fetching institutional data for {symbol}")
         cache_key = f"institutional_{symbol}"
-        if cached := self.ache.get(cache_key):
+        if cached := self.cache.get(cache_key):
             self.send("ownership_analysis", {"symbol": symbol, "analysis": cached})
             return
         try:
